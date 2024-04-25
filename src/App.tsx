@@ -1,17 +1,33 @@
-import React, { FC } from "react";
+import { FC } from "react";
+import { Card, CardContent, Grid } from "@mui/material";
+import Header from "./components/App/Header";
+import BuildPanel from "./components/App/BuildPane";
+import Sidebar from "./components/App/Sidebar";
+
 import "./App.css";
-import Button from "./components/util/Button";
-import Checkbox from "./components/util/Checkbox";
-import TextField from "./components/util/TextField";
 
 interface AppProps {}
 const App: FC<AppProps> = () => {
   return (
-    <div>
-      flowchart builder !<Button>aaa</Button>
-      <Checkbox />
-      <TextField />
-    </div>
+    <Grid container>
+      <Grid item xs={12}>
+        <Header />
+      </Grid>
+      <Grid item xs>
+        <Card>
+          <CardContent>
+            <BuildPanel />
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs="auto">
+        <Card>
+          <CardContent>
+            <Sidebar />
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 
